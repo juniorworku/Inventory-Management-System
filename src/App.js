@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Info from './info.js';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Info />
+      <AddItem />
+      <AddItem />
+      <AddItem />
+      <AddItem />
+     
+      
     </div>
+  );
+}
+
+function AddItem(){
+  const value="this is the item adding area."
+  return(
+    <form>
+      <label for="text-label">Add Item Here:</label>
+      <input type="text" id="text-label" value={value}/>
+
+    </form>
   );
 }
 
