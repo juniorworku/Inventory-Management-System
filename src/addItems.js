@@ -17,21 +17,32 @@ function AddItems(props) {
         }
 
     return(
-        <div>
-            <h2>Add an Item</h2>
-            <form>
-                <lable for="name-field">Name:</lable>
-                <input id="name-field" type="text" value={name} onChange={(e) => setName(e.target.value)} />
-                <lable for="price-field">Price:</lable>
-                <input id="price-field" type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
-                <lable for="type-field">Type:</lable>
-                <input id="type-field" type="text" value={type} onChange={(e) => setType(e.target.value)} />
-                <lable for="brand-field">brand:</lable>
-                <input id="brand-field" type="text" value={brand} onChange={(e) => setBrand(e.target.value)} />
-                <button type="button" onClick={addItemButtonPressed}>Add Item</button>
-
-
-            </form>
+        <div className='container'>
+            <div className='row'>
+                <h2>Add an Item</h2>
+            </div>
+            
+            <div className='row'>
+                <div className='col'>
+                    <lable for="name-field">Name:</lable>
+                    <input id="name-field" type="text" className='form-control' value={name} onChange={(e) => setName(e.target.value)} />
+                </div>
+                <div className='col'>
+                    <lable for="price-field">Price:</lable>
+                    <input id="price-field" type="number" className='form-control' value={price} onChange={(e) => setPrice(e.target.value)} />
+                </div>
+                <div className='col'>
+                    <lable for="type-field">Type:</lable>
+                    <input id="type-field" type="text" className='form-control' value={type} onChange={(e) => setType(e.target.value)} />
+                </div>
+                <div className='col'>
+                    <lable for="brand-field">brand:</lable>
+                    <input id="brand-field" type="text" className='form-control' value={brand} onChange={(e) => setBrand(e.target.value)} />
+                </div>
+            </div>
+            <div className='row mt-3'></div>
+                <div className='col col-4'></div>
+                    <button type="button" className='col-4 btn btn-dark' onClick={addItemButtonPressed}>Add Item</button>
         
         </div>
     )
