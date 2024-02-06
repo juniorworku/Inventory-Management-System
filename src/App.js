@@ -1,28 +1,32 @@
+import { useState } from 'react';
 import './App.css';
-import Info from './info.js';
+import SearchBar from "./searchBar"
+import AddItems from './addItems';
+import ItemsDisplay from './itemsDisplay';
 
 function App() {
+  const [filters, setFilters] = useState({});
+  const [data, setData] = useState({items:[] });
+
+  const updateFilters= (searchParams) => {
+  setData(searchParams);
+}
+  const addItemTodata = (item) =>{
+    let items = data["items"];
+    items.id  = items.length;
+    items.push(item);
+    setData({items: items});
+    console.log(data)
+
+  }
   return (
     <div className="App">
-      <Info />
-      <AddItem />
-      <AddItem />
-      <AddItem />
-      <AddItem />
-     
+      <SearchBar updateSearchParams={updateFilters}/>
+      <ItemsDisplay items={data["items"]}/>
+      <AddItems addItem={ addItemTodata}/>
+      
       
     </div>
-  );
-}
-
-function AddItem(){
-  const value="this is the item adding area."
-  return(
-    <form>
-      <label for="text-label">Add Item Here:</label>
-      <input type="text" id="text-label" value={value}/>
-
-    </form>
   );
 }
 
