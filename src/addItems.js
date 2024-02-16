@@ -42,7 +42,7 @@ function AddItems(props) {
             </div>
             <div className='row mt-3'></div>
                 <div className='col col-4'></div>
-                    <button type="button" className='col-4 btn btn-dark' onClick={addItemButtonPressed}>Add Item</button>
+                    <button type="button" className=' col-4 btn btn-dark' onClick={addItemButtonPressed}>Add Item</button>
         
         </div>
     )
